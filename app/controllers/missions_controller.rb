@@ -1,4 +1,6 @@
 class MissionsController < ApplicationController
+  before_action :find_mission, only: [:edit, :update, :destroy]
+
   def index
     @missions = Mission.all
   end
@@ -18,8 +20,30 @@ class MissionsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @mission.update(mission_params)
+      redirect_to root_path, notice: "更新成功"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @mission.destroy
+      redirect_to root_path, notice: "刪除成功"
+    else
+      redirect_to root_path, notice: "刪除失敗"
+    end
+  end
+
 
   private
+  def find_mission
+    @mission = Mission.find_by(id: params[:id])
+  end
   def mission_params
     params.require(:mission).permit(:title, :priority, :category)
   end
