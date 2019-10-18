@@ -10,6 +10,7 @@
       <td>起始時間</td>
       <td>結束時間</td>
       <td>優先度</td>
+      <td>種類</td>
       <td>動作</td>
     </tr>
   </thead>
@@ -21,6 +22,7 @@
         <td> <%= mission.start_time %> </td>
         <td> <%= mission.end_time %> </td>
         <td> <%= mission.priority %> </td>
+        <td> <%= mission.category %> </td>
         <td>
           <%= link_to "編輯", edit_mission_path(id: mission.id) %> 
           <%= link_to "刪除", mission_path(id: mission.id), method: "delete" %> 
