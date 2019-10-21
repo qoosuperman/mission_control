@@ -5,6 +5,10 @@ rvm:
   - 2.6.3
 before_install:
   - gem install rake
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database mission_control_test;' -U postgres
 script:
   — bundle exec rails db:create
   — bundle exec rails db:migrate
