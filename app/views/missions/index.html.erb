@@ -25,7 +25,7 @@
         <td> <%= mission.category %> </td>
         <td>
           <%= link_to "編輯", edit_mission_path(id: mission.id) %> 
-          <%= link_to "刪除", mission_path(id: mission.id), method: "delete" %> 
+          <%= link_to "刪除", mission_path(id: mission.id), method: "delete", data: { confirm: "確定要刪除嗎?" } %> 
         </td>
       </tr>
     <% end %>

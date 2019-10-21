@@ -2,6 +2,7 @@ class MissionsController < ApplicationController
   before_action :find_mission, only: [:edit, :update, :destroy]
 
   def index
+    #之後會用分頁處理，目前先用 all 跑出全部資料
     @missions = Mission.all
   end
 

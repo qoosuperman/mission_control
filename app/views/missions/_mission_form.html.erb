@@ -5,11 +5,11 @@
   </div>
   <div>
     <%= form.label :priority, "優先度" %>
-    <%= form.select :priority, [["緊急", 'urgent'], ["普通", "common"], ["沒很重要", "low"]] %>
+    <%= form.select :priority, priority_selection %>
   </div>
   <div>
     <%= form.label :category, "種類" %>
-    <%= form.select :category, [["公事", "company"], ["家事", "home"]] %>
+    <%= form.select :category, category_selection %>
   </div>
   <div>
     <%= form.label :start_time, "起始時間" %>
