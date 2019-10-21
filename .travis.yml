@@ -1,0 +1,12 @@
+addons:
+  postgresql: 11.5
+language: ruby
+rvm:
+  - 2.6.3
+before_install:
+  - gem install rake
+script:
+  — bundle exec rails db:create
+  — bundle exec rails db:migrate
+  travis lint
+— bundle exec rspec
