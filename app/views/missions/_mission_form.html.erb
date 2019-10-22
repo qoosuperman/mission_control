@@ -16,5 +16,5 @@
     <%= form.date_select :start_time %>
     <%= form.time_select :start_time, :ignore_date => true %>
   </div>
-  <%= form.submit "送出" %>
+  <%= form.submit "送出", data: { disable_with: false } %>
 <% end %>
