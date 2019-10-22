@@ -1,9 +1,9 @@
 addons:
   postgresql: 11.5
   apt:
-  packages:
-  - postgresql-11
-  - postgresql-client-11
+    packages:
+    - postgresql-11
+    - postgresql-client-11
 language: ruby
 rvm:
   - 2.6.3
@@ -11,7 +11,7 @@ before_install:
   - gem install rake
 services:
   - postgresql
-script:
+script: 
   - bundle exec rails db:create RAILS_ENV=test
   - bundle exec rails db:migrate RAILS_ENV=test
   - bundle exec rspec
