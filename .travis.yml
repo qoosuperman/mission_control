@@ -12,5 +12,4 @@ before_script:
 script:
   — bundle exec rails db:create
   — bundle exec rails db:migrate
-  travis lint
-— bundle exec rspec
+  — bundle exec rspec
