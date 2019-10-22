@@ -1,6 +1,6 @@
-env:
-  global:
-  - PGPORT=5433
+# env:
+#   global:
+#   - PGPORT=5433
 addons:
   postgresql: "10"
   apt:
@@ -21,8 +21,6 @@ install:
   - npm i -g yarn
   - yarn
 script: 
-  - yarn lint
-  - yarn test
   - bundle exec rails db:create RAILS_ENV=test
   - bundle exec rails db:migrate RAILS_ENV=test
   - bundle exec rspec
